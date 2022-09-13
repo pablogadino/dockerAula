@@ -1,0 +1,6 @@
+Cambiar en superior carpetas 'archivos' y 'bd'
+Esto existe porque si uso un contenedor con xdebug phpunit me dice que xdebug ya està ejecutàndose y no me anda.
+Uso:
+docker-compose run phpunit tests --bootstrap tests/bootstrap.php
+
+

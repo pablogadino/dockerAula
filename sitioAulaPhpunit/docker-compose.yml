@@ -1,0 +1,21 @@
+# docker-compose.yml
+version: "3.8"
+services:
+  phpunit:
+    container_name: phpunit
+    build: ./php
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    ports:
+      - "880:880"
+      - "444:444"
+    volumes:
+      - ../html:/var/www/html
+      - ./xdebug:/var/logs/xdebug
+    working_dir: ${RUTA}
+    environment:
+      - UPLOAD_LIMIT:64M
+    restart: unless-stopped
+    entrypoint: vendor/bin/phpunit
+  
+  
