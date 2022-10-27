@@ -20,7 +20,7 @@ RUN wget https://github.com/FriendsOfPHP/pickle/releases/download/v0.7.9/pickle.
     && chmod +x /usr/local/bin/pickle
     
 RUN pickle install xdebug
-RUN pickle install mysqli
+RUN docker-php-ext-install mysqli 
 
 RUN apt-get install -y libxml2-dev
 
